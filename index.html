@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapa Potencjału</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="hero-card">
+        <h1>Mapa Potencjału</h1>
+        <p class="lead">Interaktywna gra dla doradców zawodowych — odkryj wartości, talenty, cienie i wizję. Spokojny, kolorowy interfejs; interpretacja psychologiczna + sugestie ścieżek kariery.</p>
+        <div class="hero-actions">
+          <button id="startBtn" class="btn primary">Rozpocznij</button>
+          <button id="howBtn" class="btn">Jak grać</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container hidden" id="game">
+      <nav class="tabs">
+        <button class="tab active" data-kraina="Wartości">Wartości</button>
+        <button class="tab" data-kraina="Talenty">Talenty</button>
+        <button class="tab" data-kraina="Cienie">Cienie</button>
+        <button class="tab" data-kraina="Wizja">Wizja</button>
+      </nav>
+
+      <section class="content">
+        <aside class="panel left" id="symbolsPanel">
+          <div id="symbolsGrid" class="grid"></div>
+        </aside>
+
+        <aside class="panel right" id="sidePanel">
+          <div class="card">
+            <h3>Twój wybór</h3>
+            <p id="count">0 symboli</p>
+            <ul id="selectedList" class="selected-list"></ul>
+            <div class="controls">
+              <button id="reportBtn" class="btn primary" disabled>Generuj raport</button>
+              <button id="resetBtn" class="btn">Reset</button>
+            </div>
+          </div>
+
+          <div class="card small">
+            <h4>Instrukcja</h4>
+            <ol>
+              <li>Kliknij symbole, które rezonują z Tobą.</li>
+              <li>Zbierz min. 3 symbole z różnych krain (wartości, talenty, cienie, wizja).</li>
+              <li>Wygeneruj raport i omów interpretację z uczestnikiem.</li>
+            </ol>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-card">
+        <button id="closeModal" class="close">✕</button>
+        <h2>Raport — Twoja Mapa Potencjału</h2>
+        <div id="reportContent"></div>
+        <div class="modal-actions">
+          <button id="copyBtn" class="btn">Kopiuj raport</button>
+          <button id="downloadBtn" class="btn primary">Pobierz jako TXT</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <small>© Mapa Potencjału — narzędzie dla doradców zawodowych. Metodologia inspirowana konstruktywizmem w doradztwie.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
